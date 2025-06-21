@@ -6,7 +6,7 @@ echo "Enter your username:"
 read NAME
 
 GET_RANDOM(){
-  
+
 FIND_NAME=$($PSQL "SELECT username FROM users WHERE username = '$NAME';")
 GAMES=$($PSQL "SELECT games_played FROM users WHERE username = '$NAME';")
 BEST=$($PSQL "SELECT best_game FROM users WHERE username = '$NAME';")
@@ -22,3 +22,5 @@ fi
 
   echo $((1 + RANDOM % 1000))
 }
+
+GET_RANDOM

@@ -43,7 +43,7 @@ elif [[ $GUESS -gt $SECRET ]]
 then
   echo -e "\nIt's lower than that, guess again:"
 else
-  echo "You guessed it in $TRIES tries. The secret number was $SECRET. Nice Job!"
+  echo "You guessed it in $TRIES tries. The secret number was $SECRET. Nice job!"
   break
 fi
 done

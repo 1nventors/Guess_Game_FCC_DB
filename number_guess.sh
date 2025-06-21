@@ -7,6 +7,7 @@ read NAME
 
 GET_RANDOM(){
 
+RANDOM=$((1 + RANDOM % 1000))
 FIND_NAME=$($PSQL "SELECT username FROM users WHERE username = '$NAME';")
 GAMES=$($PSQL "SELECT games_played FROM users WHERE username = '$NAME';")
 BEST=$($PSQL "SELECT best_game FROM users WHERE username = '$NAME';")
@@ -19,8 +20,14 @@ else
   echo -e "\nWelcome back, $NAME! You have played $GAMES games, and your best game took $BEST guesses."
 fi
 
+echo "Guess the secret number between 1 and 1000:"
+read GUESS
 
-  echo $((1 + RANDOM % 1000))
+if [[ -z $GUESS ]]
+then
+  echo "That is not an integer, guess again:"
+fi
+
 }
 
 GET_RANDOM

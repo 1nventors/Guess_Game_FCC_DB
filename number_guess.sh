@@ -23,26 +23,30 @@ else
 fi
 
 echo "Guess the secret number between 1 and 1000:"
+
+while true
+do
 read GUESS
 
-if [[ -z $GUESS ]]
-then
-  echo "That is not an integer, guess again:"
+if ! [[ $GUESS =~ ^[0-9]+$ ]]
+  then
+    echo "That is not an integer, guess again:"
+    continue
+fi
+
+((TRIES++))
+
 if [[ $GUESS -lt $SECRET ]]
 then
   echo -e "\nIt's higher than that, guess again:"
-  TRIES+=1
-fi
-if [[ $GUESS -gt $SECRET ]]
+elif [[ $GUESS -gt $SECRET ]]
 then
   echo -e "\nIt's lower than that, guess again:"
-  TRIES+=1
-fi
-if [[ $GUESS == $SECRET ]]
-then
+else
   echo "You guessed it in $TRIES tries. The secret number was $RANDOM. Nice Job!"
+  break
 fi
-fi
+done
 
 }
 

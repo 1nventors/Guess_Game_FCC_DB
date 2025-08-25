@@ -42,13 +42,20 @@ The PostgreSQL database is named **`number_guess`** and contains one table:
 ## 🎮 Example Gameplay  
 
 Enter your username:
+```
 John
-
+```
 Welcome back, John! You have played 5 games, and your best game took 7 guesses.
 Guess the secret number between 1 and 1000:
+```
 500
+```
 It's higher than that, guess again:
+```
 750
+```
 It's lower than that, guess again:
+```
 623
+```
 You guessed it in 3 tries. The secret number was 623. Nice job!

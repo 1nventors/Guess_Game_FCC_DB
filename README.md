@@ -60,5 +60,3 @@ It's lower than that, guess again:
 ```
 You guessed it in 3 tries. The secret number was 623. Nice job!
 
-
----
